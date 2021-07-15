@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/time_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select time" />
+
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select date" />
+
+    <Button
+        android:id="@+id/image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select image" />
+
+    <Button
+        android:id="@+id/video_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select video" />
+
+    <Button
+        android:id="@+id/file_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select file" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+</LinearLayout>

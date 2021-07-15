@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">View2</string>
+    <string name="milk">Milk</string>
+    <string name="tea">Tea</string>
+    <string name="caveman">Caveman</string>
+    <string name="astraunat">Astraunat</string>
+
+    <array name="spinner_values">
+        <item>light</item>
+        <item>amber</item>
+        <item>brown</item>
+        <item>dark</item>
+    </array>
+</resources>

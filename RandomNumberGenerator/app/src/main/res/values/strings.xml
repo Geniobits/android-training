@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RandomNumberGenerator</string>
+    <string name="random_number">Random Number</string>
+    <string name="generate">Generate</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="send_button">Send Button</string>
+</resources>

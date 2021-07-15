@@ -1,0 +1,22 @@
+Step 1: Create Menu Resourse Folder
+
+Step 2: Add Resourse File menu.xml
+
+Step 3: Add Items
+    a. 
+        <item
+            android:id="@+id/create_order" 
+            android:title="@string/create_order"
+            android:icon="@android:drawable/btn_plus"
+            android:orderInCategory="1" //for order
+            app:showAsAction="ifRoom"/> //condition to show where
+
+Step 4: In Activity inflate menu
+    use onCreateOptionsMenu()
+    inflate using getMenuInflater().inflate(R.menu.menu, menu);
+
+Step 5: Menu item Listner
+    onOptionsItemSelected
+
+
+    

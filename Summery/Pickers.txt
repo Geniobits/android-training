@@ -1,0 +1,75 @@
+1. Time Date Picker
+    https://github.com/wdullaer/MaterialDateTimePicker
+
+    a. for date:
+                Calendar now = Calendar.getInstance();
+                DatePickerDialog dpd = DatePickerDialog.newInstance(
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+                                Log.e("Date", year+" "+monthOfYear+" "+dayOfMonth);
+                            }
+                        },
+                        now.get(Calendar.YEAR), // Initial year selection
+                        now.get(Calendar.MONTH), // Initial month selection
+                        now.get(Calendar.DAY_OF_MONTH) // Inital day selection
+                );
+                // If you're calling this from an AppCompatActivity
+                 dpd.show(getSupportFragmentManager(), "Datepickerdialog");
+
+    b. for time:
+                TimePickerDialog dpd = TimePickerDialog.newInstance(new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+                    }
+                }, false);
+                // If you're calling this from an AppCompatActivity
+                dpd.show(getSupportFragmentManager(), "Datepickerdialog");
+
+
+2. Image and video chooser:
+    https://mrshadow98.github.io/MediaChooserDialog/
+
+3. All file chooser
+    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    intent.setType("application/pdf");
+    startActivityForResult(intent, intentCode2);
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode==intentCode2) {
+            // Get the Uri of the selected file
+            Uri uri = data.getData();
+            File directoryMain = getExternalFilesDir("Media");
+            File sentDirectory = new File(directoryMain +'/end/path');
+            if (!sentDirectory.exists()) {
+                boolean success = sentDirectory.mkdirs();
+                Log.e("makedir",String.valueOf(success));
+            }
+
+            String fileName = getSaltString()+".pdf";
+            File end_file = new File(directoryMain + '/end/path' + fileName);
+            try {
+                copy(uri, end_file, getApplicationContext());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+    public static void copy(Uri src, File dst, Context context) throws IOException {
+        try (InputStream in = context.getContentResolver().openInputStream(src);  ) {
+            try (OutputStream out = new FileOutputStream(dst)) {
+                // Transfer bytes from in to out
+                byte[] buf = new byte[1024];
+                int len;
+                while ((len = in.read(buf)) > 0) {
+                    out.write(buf, 0, len);
+                }
+            }
+        }
+    }

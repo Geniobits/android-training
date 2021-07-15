@@ -1,0 +1,20 @@
+Step 1: Create Menu Resourse Folder
+
+Step 2: Add Resourse File menu.xml
+
+Step 3: Add Items
+    a. 
+        <item
+            android:id="@+id/create_order" 
+            android:title="@string/create_order"
+            android:icon="@android:drawable/btn_plus"/> 
+
+Step 4: In Activity inflate menu
+    add BottomNavigationView
+    add menu to it
+
+Step 5: Menu item Listner
+    setOnNavigationItemSelectedListener
+
+
+    

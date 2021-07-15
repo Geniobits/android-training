@@ -1,0 +1,18 @@
+1. create recycler view item.
+2. create model
+3. create adapter
+    a.
+    extends RecyclerView.Adapter<BookAdapter.ViewHolder> 
+    b.
+    in oncreateviewholder:
+    LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.book_card, parent, false);
+                        return new ViewHolder(itemView)
+
+    c.public static class ViewHolder extends RecyclerView.ViewHolder
+4. Set Adapter
+RecyclerView recyclerViewCourseUploaded = view.findViewById(R.id.recycerview_course_uploaded);
+Adapter mAdapter = new Adapter(getActivity());
+final RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL,false);
+recyclerViewCourseUploaded.setLayoutManager(mLayoutManager);
+recyclerViewCourseUploaded.setAdapter(mAdapter);
